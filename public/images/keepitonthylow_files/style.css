@@ -63,8 +63,8 @@ table{
 }
 .content{
   text-align: center;
-  /* padding: 300px; */
-  /* min-height: 815px; */
+  padding: 300px;
+  min-height: 815px;
 }
 
 .content h1{
@@ -94,19 +94,20 @@ table{
   margin-top: 20px;
 }
 .back-video{
+  position: absolute;
   right: 0;
   bottom: 0;
   z-index: -1;
 }
 
 @media (min-aspect-ratio: 16/9){
-  .back-video{
+  .back-video .bodymin{
     width: 100%;
     height: auto;
   }
 }
 @media (max-aspect-ratio: 16/9){
-  .back-video{
+  .back-video .bodymin{
     width: auto;
     height: 100%;
   }
