@@ -28,6 +28,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
+app.use(express.static(path.join(__dirname, "node_modules/bootstrap/dist/")));
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -57,3 +59,5 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+
