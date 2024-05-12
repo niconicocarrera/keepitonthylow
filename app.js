@@ -13,6 +13,8 @@ var musicRouter = require('./routes/music');
 var visualsRouter = require('./routes/visuals');
 var archiveRouter = require('./routes/archive');
 var shopRouter = require('./routes/shop');
+var helpRouter = require('./routes/help');
+var privacyRouter = require('./routes/privacy');
 
 
 
@@ -39,6 +41,8 @@ app.use('/music', musicRouter);
 app.use('/visuals', visualsRouter);
 app.use('/archive', archiveRouter);
 app.use('/shop', shopRouter);
+app.use('/help', helpRouter);
+app.use('/privacy', privacyRouter);
 
 
 
