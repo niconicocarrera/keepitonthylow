@@ -1,0 +1,76 @@
+CATEGORY (category)
+    //example insert statement
+    INSERT INTO category(category_id, categoryname, description) VALUES (int(11), varchar(50), varchar(250));
+
+    //sample data
+    INSERT INTO category(category_id, categoryname, description) VALUES (1, "music", "releases, singles, albums, compilations etc.");
+    INSERT INTO category(category_id, categoryname, description) VALUES (2, "visuals", "music videos, short films, commercials etc.");
+    INSERT INTO category(category_id, categoryname, description) VALUES (3, "archive", "dj sets, concert videos, random, etc.");
+    INSERT INTO category(category_id, categoryname, description) VALUES (4, "clothing", "shirts, sweatshirts, pants, accessories, etc.");
+    INSERT INTO category(category_id, categoryname, description) VALUES (5, "physical media", "CDs, vinyls, posters/prints, etc.");
+
+
+CUSTOMER (customer)
+     //example insert statement
+    INSERT INTO customer(customer_id, firstname, lastname, email, phone, address1, address2, city, state, zip, username, password) VALUES (int(11), varchar(20), varchar(20), varchar(25), varchar(20), varchar(50), varchar(50), varchar(20), varchar(50), varchar(10), varchar(20), varchar(2000));
+
+    //sample data
+    INSERT INTO customer(customer_id, firstname, lastname, email, phone, address1, address2, city, state, zip, username, password) VALUES (1, "Jaime", "V", "jaimev@keepionthylow.com", "7735555555", "2250 N Sheffield", "", "Chicago", "IL", "60614", "jaimev", "1234");
+    INSERT INTO customer(customer_id, firstname, lastname, email, phone, address1, address2, city, state, zip, username, password) VALUES (2, "Johnathon", "H", "johnh@keepionthylow.com", "7735555555", "2250 N Sheffield", "", "Chicago", "IL", "60614", "johnathonh", "1234");
+    INSERT INTO customer(customer_id, firstname, lastname, email, phone, address1, address2, city, state, zip, username, password) VALUES (3, "Luis", "A", "luisa@keepionthylow.com", "7735555555", "2250 N Sheffield", "", "Chicago", "IL", "60614", "luisa", "1234");
+    INSERT INTO customer(customer_id, firstname, lastname, email, phone, address1, address2, city, state, zip, username, password) VALUES (4, "Nesto", "H", "nestoh@keepionthylow.com", "7735555555", "2250 N Sheffield", "", "Chicago", "IL", "60614", "nestoh", "1234");
+    INSERT INTO customer(customer_id, firstname, lastname, email, phone, address1, address2, city, state, zip, username, password) VALUES (5, "Ivan", "P", "ivanp@keepionthylow.com", "7735555555", "2250 N Sheffield", "", "Chicago", "IL", "60614", "ivanp", "1234");
+
+
+
+ORDER DETAIL (orderdetail)
+     //example insert statement
+    INSERT INTO orderdetail (orderdetail_id, order_id, product_id, saleprice, qty) VALUES (int(11), int(11), int(11), decimal(8,2), int(11));
+
+    //sample data
+    INSERT INTO orderdetail (orderdetail_id, order_id, product_id, saleprice, qty) VALUES (1, 1, 1, 20.00, 1);
+    INSERT INTO orderdetail (orderdetail_id, order_id, product_id, saleprice, qty) VALUES (2, 2, 2, 20.00, 1);
+    INSERT INTO orderdetail (orderdetail_id, order_id, product_id, saleprice, qty) VALUES (3, 3, 3, 20.00, 1);
+    INSERT INTO orderdetail (orderdetail_id, order_id, product_id, saleprice, qty) VALUES (4, 4, 4, 20.00, 1);
+    INSERT INTO orderdetail (orderdetail_id, order_id, product_id, saleprice, qty) VALUES (5, 5, 5, 18.00, 1);
+
+
+
+PRODUCT (product)
+     //example insert statement
+    INSERT INTO product (product_id, productname, prodimage, description, supplier_id, category_id, saleprice, status) VALUES (int(11), varchar(50), varchar(50), varchar(500), varchar(500), varchar(50), varchar(20), varchar(50), varchar(50), int(11), int(11), decimal(8.2), varchar(20));
+
+    //sample data
+    INSERT INTO product (product_id, productname, prodimage, description, supplier_id, category_id, saleprice, status) VALUES (1, "Face Tee (White)", "white_face_tee.png", "White short-sleeve t-shirt with black kiotl face graphic.", 1, 4, 20.00, "In Stockl");
+    INSERT INTO product (product_id, productname, prodimage, description, supplier_id, category_id, saleprice, status) VALUES (2, "Face Tee (Black)", "black_tvface_tee.png", "Black short-sleeve t-shirt with white kiotl face graphic.", 1, 4, 20.00, "In Stockl");
+    INSERT INTO product (product_id, productname, prodimage, description, supplier_id, category_id, saleprice, status) VALUES (3, "Fuzz Tee (White)", "pink_white_fuzz_tee.png", "White short-sleeve t-shirt with pink kiotl fuzz graphic.", 1, 4, 20.00, "In Stockl");
+    INSERT INTO product (product_id, productname, prodimage, description, supplier_id, category_id, saleprice, status) VALUES (4, "Fuzz Tee (Black)", "kiotl_fuzz_blacknwhite.png", "Black short-sleeve t-shirt with white kiotl fuzz graphic.", 1, 4, 20.00, "In Stockl");
+    INSERT INTO product (product_id, productname, prodimage, description, supplier_id, category_id, saleprice, status) VALUES (5, "Orbit CD", "orbit_cd.png", "The debut album of Nico Nico on CD format, poster/ digital download included.", 1, 5, 18.00, "In Stockl");
+
+
+
+
+
+SALE ORDER (saleorder)
+     //example insert statement
+    INSERT INTO saleorder (order_id, customer_id, saledate, customernotes, paymentstatus, authorizationnum) VALUES (int(11), int(11), date, varchar(500), varchar(10), varchar(10));
+
+    //sample data
+    INSERT INTO saleorder (order_id, customer_id, saledate, customernotes, paymentstatus, authorizationnum) VALUES (1, 1, "2024-5-12", "NONE", "PAIDNFULL", "00000001");
+    INSERT INTO saleorder (order_id, customer_id, saledate, customernotes, paymentstatus, authorizationnum) VALUES (2, 2, "2024-5-12", "NONE", "PAIDNFULL", "00000002");
+    INSERT INTO saleorder (order_id, customer_id, saledate, customernotes, paymentstatus, authorizationnum) VALUES (3, 3, "2024-5-12", "NONE", "PAIDNFULL", "00000003");
+    INSERT INTO saleorder (order_id, customer_id, saledate, customernotes, paymentstatus, authorizationnum) VALUES (4, 4, "2024-5-12", "NONE", "PAIDNFULL", "00000004");
+    INSERT INTO saleorder (order_id, customer_id, saledate, customernotes, paymentstatus, authorizationnum) VALUES (5, 5, "2024-5-12", "NONE", "PAIDNFULL", "00000005");
+
+
+
+SUPPLIER (supplier)
+     //example insert statement
+    INSERT INTO supplier(supplier_id, suppliername, pointofcontact, contactinfo, webinfo) VALUES (int(11), varchar(50), varchar(50), varchar(50), varchar(50));
+
+    //sample data
+    INSERT INTO supplier(supplier_id, suppliername, pointofcontact, contactinfo, webinfo) VALUES (1, "xxxxx", "xxxxx", "xxxxx", "xxxxx");
+    INSERT INTO supplier(supplier_id, suppliername, pointofcontact, contactinfo, webinfo) VALUES (2, "Depaul IRL", "Matthew Irving", "7083749234", "depaul.edu");
+    INSERT INTO supplier(supplier_id, suppliername, pointofcontact, contactinfo, webinfo) VALUES (3, "Clothing Blanks LLC", "Mr Shirts", "mrshirts@clothingblanks.com", "clothingblanks.com");
+
+
