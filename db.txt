@@ -73,4 +73,12 @@ SUPPLIER (supplier)
     INSERT INTO supplier(supplier_id, suppliername, pointofcontact, contactinfo, webinfo) VALUES (2, "Depaul IRL", "Matthew Irving", "7083749234", "depaul.edu");
     INSERT INTO supplier(supplier_id, suppliername, pointofcontact, contactinfo, webinfo) VALUES (3, "Clothing Blanks LLC", "Mr Shirts", "mrshirts@clothingblanks.com", "clothingblanks.com");
 
+PROMOTION (promotion)
+    //example insert statement
+    INSERT INTO promotion(promotitle, promoimage, description, startdate, enddate) VALUES ("Promotion 1", "promo1.png", "Promotion 1 Description", "2024-06-01", "2024-06-30");
+
+    INSERT INTO promotion(promotitle, promoimage, description, startdate, enddate) VALUES ("KIOTL_Event_001", "promo2.png", "KIOTL 001 Description", "2024-06-03", "2024-06-22");
+    INSERT INTO promotion(promotitle, promoimage, description, startdate, enddate) VALUES ("KIOTL_Event_002", "promo3.png", "KIOTL 002 Description", "2024-06-24", "2024-07-12");
+    INSERT INTO promotion(promotitle, promoimage, description, startdate, enddate) VALUES ("KIOTL_Event_003", "promo4.png", "KIOTL 003 Description", "2024-07-01", "2024-06-");
+    INSERT INTO promotion(promotitle, promoimage, description, startdate, enddate) VALUES ("KIOTL_Event_004", "promo5.png", "KIOTL 004 Description", "2024-07-15", "2024-08-02");
 

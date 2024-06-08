@@ -1,62 +1,64 @@
-<h1>Edit Supplier</h1>
-<form action="/supplier/save" method="post">
-  <input type="hidden" name="supplier_id" value="<%= onerec.supplier_id %>" />
-  <table>
-    <tr>
-      <td>Supplier ID:</td>
-      <td>
-        <input
-          type="number"
-          name="supplier_id"
-          value="<%= onerec.supplier_id %>"
-          required
-        />
-      </td>
-    </tr>
-    <tr>
-      <td>Supplier Name:</td>
-      <td>
-        <input
-          type="text"
-          name="suppliername"
-          value="<%= onerec.suppliername %>"
-          required
-        />
-      </td>
-    </tr>
-    <tr>
-      <td>Point of Contact:</td>
-      <td>
-        <input
-          type="text"
-          name="pointofcontact"
-          value="<%= onerec.pointofcontact %>"
-          required
-        />
-      </td>
-    </tr>
-    <tr>
-      <td>Contact Info:</td>
-      <td>
-        <input
-          type="text"
-          name="contactinfo"
-          value="<%= onerec.contactinfo %>"
-          required
-        />
-      </td>
-    </tr>
-    <tr>
-      <td>Web Info:</td>
-      <td>
-        <input
-          type="text"
-          name="webinfo"
-          value="<%= onerec.webinfo %>"
-          required
-        />
-      </td>
-    </tr>
-  </table>
-  <button type="submit">Save</button>
-</form>
+<div class="db"> 
+  <h1>Edit Supplier</h1>
+  <form action="/supplier/save" method="post">
+    <input type="hidden" name="supplier_id" value="<%= onerec.supplier_id %>" />
+    <table>
+      <tr>
+        <td>Supplier ID:</td>
+        <td>
+          <input
+            type="number"
+            name="supplier_id"
+            value="<%= onerec.supplier_id %>"
+            required
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Supplier Name:</td>
+        <td>
+          <input
+            type="text"
+            name="suppliername"
+            value="<%= onerec.suppliername %>"
+            required
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Point of Contact:</td>
+        <td>
+          <input
+            type="text"
+            name="pointofcontact"
+            value="<%= onerec.pointofcontact %>"
+            required
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Contact Info:</td>
+        <td>
+          <input
+            type="text"
+            name="contactinfo"
+            value="<%= onerec.contactinfo %>"
+            required
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Web Info:</td>
+        <td>
+          <input
+            type="text"
+            name="webinfo"
+            value="<%= onerec.webinfo %>"
+            required
+          />
+        </td>
+      </tr>
+    </table>
+    <button type="submit">Save</button>
+  </form>
+</div>

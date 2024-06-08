@@ -24,6 +24,10 @@ var orderdetailRouter = require('./routes/orderdetail');
 var saleorderRouter = require('./routes/saleorder');
 var supplierRouter = require('./routes/supplier');
 var categoryRouter = require('./routes/category');
+var searchRouter = require('./routes/search');
+var promotionRouter = require('./routes/promotion');
+var reportRouter = require('./routes/report');
+
 
 
 
@@ -58,17 +62,20 @@ app.use('/orderdetail', orderdetailRouter);
 app.use('/saleorder', saleorderRouter);
 app.use('/category', categoryRouter);
 app.use('/supplier', supplierRouter);
+app.use('/search', searchRouter);
+app.use('/promotion', promotionRouter);
+app.use('/report', reportRouter);
 
 
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -81,20 +88,22 @@ app.use(function(err, req, res, next) {
 const mariadb = require('mariadb/callback');
 const dotenv = require('dotenv');
 dotenv.config();
-const db = mariadb.createConnection({host: process.env.DB_HOST,
+const db = mariadb.createConnection({
+  host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  port: process.env.DB_PORT});
-  // connect to database
-  db.connect((err) => {
+  port: process.env.DB_PORT
+});
+// connect to database
+db.connect((err) => {
   if (err) {
-  console.log("Unable to connect to database due to error: " + err);
-  res.render('error');
+    console.log("Unable to connect to database due to error: " + err);
+    res.render('error');
   } else {
-  console.log("Connected to DB");
+    console.log("Connected to DB");
   }
-  });
+});
 global.db = db;
 
 module.exports = app;

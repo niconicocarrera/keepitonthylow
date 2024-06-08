@@ -4,14 +4,14 @@ var router = express.Router();
 // Route to list all records. Display view to list all records
 // ==================================================
 router.get('/', function(req, res, next) {
-let query = "SELECT product_id, productname, category_id, saleprice,status, homepage FROM product";
+let query = "SELECT promotion_id, promotitle, promoimage, description, startdate, enddate, discountrate FROM promotion";
 // execute query
 db.query(query, (err, result) => {
 if (err) {
 console.log(err);
 res.render('error');
 }
-res.render('product/allrecords', {allrecs: result });
+res.render('promotion/allrecords', {allrecs: result });
 });
 });
 module.exports = router;
@@ -20,7 +20,7 @@ module.exports = router;
 // Route to view one specific record. Notice the view is one record
 // ==================================================
 router.get('/:recordid/show', function(req, res, next) {
-    let query = "SELECT product_id, productname, prodimage, description, supplier_id, category_id, saleprice, status, homepage FROM product WHERE product_id = " +
+    let query = "SELECT promotion_id, promotitle, description, startdate, enddate, dicsountrate FROM promotion WHERE promotion_id = " +
     req.params.recordid;
     // execute query
     db.query(query, (err, result) => {
@@ -28,7 +28,7 @@ router.get('/:recordid/show', function(req, res, next) {
     console.log(err);
     res.render('error');
     } else {
-    res.render('product/onerec', {onerec: result[0] });
+    res.render('promotion/onerec', {onerec: result[0] });
     }
     });
     });
@@ -37,28 +37,20 @@ router.get('/:recordid/show', function(req, res, next) {
 // Route to show empty form to obtain input form end-user.
 // ==================================================
 router.get('/addrecord', function(req, res, next) {
-    res.render('product/addrec');
+    res.render('promotion/addrec');
     });
 
 // ==================================================
 // Route to obtain user input and save in database.
 // ==================================================
 router.post('/', function(req, res, next) {
-
-    var homepage_value=0;
-    if (req.body.homepage)
-        {
-            homepage_value = 1;
-        }
-
-    let insertquery = "INSERT INTO product (productname, prodimage, description, supplier_id, category_id, saleprice, status, homepage) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-    db.query(insertquery,[req.body.productname, req.body.prodimage, req.body.description, req.body.supplier_id,
-    req.body.category_id, req.body.saleprice, req.body.status, homepage_value],(err, result) => {
+    let insertquery = "INSERT INTO promotion ( promotitle, promoimage, description, startdate, enddate) VALUES (?, ?, ?, ?, ?)";
+    db.query(insertquery,[req.body.promotitle, req.body.promoimage, req.body.description, req.body.startdate, req.body.enddate],(err, result) => {
     if (err) {
     console.log(err);
     res.render('error');
     } else {
-    res.redirect('/product');
+    res.redirect('/promotion');
     }
     });
     });
@@ -67,14 +59,14 @@ router.post('/', function(req, res, next) {
 // Route to edit one specific record.
 // ==================================================
 router.get('/:recordid/edit', function(req, res, next) {
-    let query = "SELECT product_id, productname, prodimage, description, supplier_id, category_id, saleprice, status, homepage FROM product WHERE product_id = " + req.params.recordid;
+    let query = "SELECT promotitle, promoimage, description, startdate, enddate FROM promotion WHERE promotion_id = " + req.params.recordid;
     // execute query
     db.query(query, (err, result) => {
     if (err) {
     console.log(err);
     res.render('error');
     } else {
-    res.render('product/editrec', {onerec: result[0] });
+    res.render('promotion/editrec', {onerec: result[0] });
     }
     });
     });
@@ -82,38 +74,31 @@ router.get('/:recordid/edit', function(req, res, next) {
 // ==================================================
 // Route to save edited data in database.
 // ==================================================
-router.post('/save', function (req, res, next) {
-
-    var homepage_value=0;
-    if (req.body.homepage)
-        {
-            homepage_value = 1;
-        }
-
-    let updatequery = "UPDATE product SET productname = ?, prodimage = ?, description = ?, supplier_id = ?, category_id = ?, saleprice = ?, status = ?, homepage = ? WHERE product_id = " + req.body.product_id;
-    db.query(updatequery, [req.body.productname, req.body.prodimage, req.body.description,
-    req.body.supplier_id, req.body.category_id, req.body.saleprice, req.body.status, homepage_value], (err, result) => {
-        if (err) {
-            console.log(err);
-            res.render('error');
-        } else {
-            res.redirect('/product');
-        }
+router.post('/save', function(req, res, next) {
+    let updatequery = "UPDATE promotion SET promotitle = ?, promoimage = ?, description = ?, startdate = ?, enddate = ? WHERE promotion_id = " + req.body.promotion_id;
+    db.query(updatequery,[req.body.promotitle, req.body.promoimage, req.body.description, req.body.startdate, req.body.enddate],(err, result) => {
+    if (err) {
+    console.log(err);
+    res.render('error');
+    } else {
+    res.redirect('/promotion');
+    }
     });
-}); 
+    });
+    
 
 // ==================================================
 // Route to delete one specific record.
 // ==================================================
 router.get('/:recordid/delete', function(req, res, next) {
-    let query = "DELETE FROM product WHERE product_id = " + req.params.recordid;
+    let query = "DELETE FROM promotion WHERE promotion_id = " + req.params.recordid;
     // execute query
     db.query(query, (err, result) => {
     if (err) {
     console.log(err);
     res.render('error');
     } else {
-    res.redirect('/product');
+    res.redirect('/promotion');
     }
     });
     });

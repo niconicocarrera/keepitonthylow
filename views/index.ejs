@@ -1,30 +1,44 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>keepitonthylow</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link rel="stylesheet" href="https://use.typekit.net/abp1ktb.css" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
-    <div>
-      <!-- <video autoplay loop muted plays-inline class="back-video">
-        <source
-          src="/images/keepitonthylow_homepage_vid.mp4"
-          type="video/mp4"
-        />
-      </video> -->
-      <div class="content">
-        <a
-          href="https://www.google.com/search?q=41.969017%2C+-87.643463&rlz=1C5CHFA_enUS868US868&oq=41.969017%2C+-87.643463&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTMyMDIzajBqN6gCALACAA&sourceid=chrome&ie=UTF-8"
-          ><img src="/images/kiotl001_transp.png" width="1200" height="auto"
-        /></a>
-      </div>
-
-      <!-- <div class="content">
-        <h1>keepitonthylow</h1>
-      </div> -->
-    </div>
-  </body>
-</html>
+<table border="1" width="100%">
+  <tr>
+    <td width="80%">
+      <p>
+        keepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylow
+        keepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylow
+        keepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylow
+        keepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylow
+      </p>
+      <hr />
+      <% if (allrecs.length > 0) {%> <% allrecs.forEach((recref, index) => { %>
+      <product>
+        <table style="color: black">
+          <tr>
+            <td colspan="2"><%= recref.proudctname %></td>
+          </tr>
+          <tr>
+            <td colspan="2"><%= recref.prodimage %></td>
+          </tr>
+          <tr>
+            <td colspan="2"><%= recref.description %></td>
+          </tr>
+          <tr>
+            <td><%= recref.saleprice %></td>
+          </tr>
+          <tr>
+            <td><%= recref.status %></td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/product/<%= recref.product_id %>/show">Details</a>
+            </td>
+          </tr>
+        </table>
+      </product>
+      <% }); %> <% } %>
+    </td>
+    <td width="20%">
+      <% if (promos.length > 0) {%> <% promos.forEach((recref, index) => { %>
+      <p><img src="/images/promo/<%= recref.promoimage %>" /></p>
+      <% }); %> <% } %>
+    </td>
+  </tr>
+</table>

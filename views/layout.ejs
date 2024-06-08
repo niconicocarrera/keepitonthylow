@@ -6,19 +6,16 @@
     <link rel="stylesheet" href="https://use.typekit.net/abp1ktb.css" />
   </head>
   <body bgcolor="black">
-    <div>
-      <table bgcolor="black" height="100%" width="100%">
-        <tr>
-          <td height="10%"><%- include("header") %></td>
-        </tr>
-        <tr>
-          <td height="85%"><%- body %></td>
-          <!-- height="300" valign="top" //put in td open tag above -->
-        </tr>
-        <tr>
-          <td height="5%"><%- include("footer") %></td>
-        </tr>
-      </table>
-    </div>
+    <table bgcolor="black" width="95%">
+      <tr>
+        <td><%- include("header") %></td>
+      </tr>
+      <tr>
+        <td height="300" valign="top"><%- body %></td>
+      </tr>
+      <tr>
+        <td><%- include("footer") %></td>
+      </tr>
+    </table>
   </body>
 </html>

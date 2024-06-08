@@ -1,0 +1,151 @@
+@import "bootstrap/scss/bootstrap";
+
+body {
+  /* padding: 50px; */
+  min-inline-size: 300px 300px;
+}
+
+a {
+  color: #fff;
+}
+
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-style: normal;
+}
+.hero{
+  width: 100%;
+  /* height: 100%; */
+  height: 100vh;
+  /* background: rgba(10, 0, 26, .03); */
+  position: absolute;
+  /* padding: 0 5%; */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+nav{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 17px;
+}
+nav ul li{
+  list-style: none;
+  display: inline-block;
+  margin-left: 40px;
+}
+/* nav ul li a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 17px;
+} */
+table, tr, td a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+}
+table{
+  border: none;
+}
+.content{
+  text-align: center;
+  padding-left: 0 5%;
+  padding-right: 0 5%;
+  /* padding: 300px; */
+  /* min-height: 815px; */
+}
+
+.content h1{
+  -webkit-text-stroke: 3px #fff;
+  letter-spacing: -20px;
+  font-size: 190px;
+  color: #fff;
+  color: transparent;
+  font-weight: 500;
+}
+.content h2{
+  -webkit-text-stroke: 2px #fff;
+  letter-spacing: -7px;
+  font-size: 70px;
+  color: #fff;
+  color: transparent;
+  font-weight: 500;
+}
+.content a{
+  text-decoration: none;
+  /* display: inline-block; */
+  color: #fff;
+  font-size: 20px;
+  /* border: 2px solid #fff; */
+  padding: 14px 70px;
+  border-radius: 50px;
+  margin-top: 20px;
+}
+.content img {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  display: inline-block;
+}
+/* }
+.back-video{
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9){
+  .back-video{
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9){
+  .back-video{
+    width: auto;
+    height: 100%;
+  } */
+a:hover {
+  color: rgb(239, 243, 255);
+}
+
+.footer p{
+  text-align: right;  
+  display: inline-block;
+
+}
+
+.footer a{
+    text-align: left;
+    display: inline-block;
+
+}
+.footer {
+    font-size: 15px;
+}
+
+product {
+  margin: 5px;
+  border: 2px solid #ccc;
+  float: left;
+  background: #0e002c;
+  box-shadow: 5px 5px 2px hsla(0, 100%, 90%, 0.857);
+  min-width: 200px;
+  max-width: 200px;
+  min-height: 250px;
+  max-height: 250px;
+  border-radius: 5px;
+  padding: 5px;
+}
