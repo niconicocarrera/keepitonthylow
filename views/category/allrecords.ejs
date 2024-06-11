@@ -1,6 +1,11 @@
 <div class="db">
   <% if (allrecs.length > 0) {%>
   <table>
+    <tr>
+      <th>Category ID</th>
+      <th>Category Name</th>
+      <th>Description</th>
+    </tr>
     <% allrecs.forEach((recref, index) => { %>
     <tr>
       <td><%= recref.category_id %></td>

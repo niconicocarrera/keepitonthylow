@@ -12,7 +12,7 @@
     <tr>
       <td><%= recref.product_id %></td>
       <td><%= recref.productname %></td>
-      <td><%= recref.saleprice %></td>
+      <td align="right"><%= Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(recref.saleprice) %></td>
       <td><%= recref.status %></td>
       <td><%= recref.homepage %></td>
       <td><a href="/product/<%= recref.product_id %>/show"> Details</a></td>

@@ -1,17 +1,39 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>kiotl | shop</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link rel="stylesheet" href="https://use.typekit.net/abp1ktb.css" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
-    <div class="content">
-      <p>mockup I did a few weeks ago</p>
-      <img src = "/images/kiotl_shape_mockup.jpg" width="800px" height="auto"/>
-      </div>
-    </div>
-  </body>
-</html>
+<% if (allrecs.length > 0) {%> 
+  <% allrecs.forEach((recref, index) => { %>
+    <product>
+      <form action="/shop/add" method="post">
+        <input type="hidden" name="product_id" value=<%= recref.product_id  %> >
+        <table>
+          <tr>
+            <td colspan="2"><%= recref.productname %></td>
+          </tr>
+          <tr>
+            <td colspan="2"><%= recref.prodimage %></td>
+          </tr>
+          <tr>
+            <td colspan="2"><%= recref.description %></td>
+          </tr>
+          <tr>
+            <td><%= recref.category_id %></td>
+            <td><%= recref.saleprice %></td>
+          </tr>
+          <tr>
+            <td><%= recref.status %></td>
+            <td><a href="/product/<%= recref.product_id %>/show">Details</a></td>
+          </tr>
+          <td>
+            Quantity:
+            <select name="qty" required width="3">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </td>
+          <td><button type="submit">Add to Cart</button></td>
+        </table>
+      </form>
+    </product>
+  <% }); %> 
+<% } %>

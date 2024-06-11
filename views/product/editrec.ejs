@@ -44,14 +44,16 @@
       </td>
     </tr>
     <tr>
-      <td>Category ID:</td>
+      <td>Category:</td>
       <td>
-        <input
-          type="number"
-          name="category_id"
-          value="<%= onerec.category_id %>"
-          required
-        />
+        <select name="category_id" required>
+          <optgroup label="Select Category">
+            <% for (var i = 0; i < category.length; i++) { %>
+            <option value=<%= category[i].category_id %>>
+            <%= category[i].categoryname %> </option>
+            <% } %>
+            </optgroup>
+        </select>
       </td>
     </tr>
     <tr>

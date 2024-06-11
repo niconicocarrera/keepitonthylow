@@ -17,7 +17,7 @@
       <td><%= recref.lastname %></td>
       <td><%= recref.saledate.toLocaleDateString('en-US') %></td>
       <td><%= recref.productname %></td>
-      <td><%= recref.saleprice %></td>
+      <td align="right"><%= Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(recref.saleprice) %></td>
       <td><%= recref.qty %></td>
     </tr>
     <% }); %>

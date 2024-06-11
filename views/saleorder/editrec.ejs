@@ -1,5 +1,5 @@
 <div class="db">
- <h1>Edit Product</h1>
+ <h1>Edit Sale Order</h1>
   <form action="/saleorder/save" method="post">
     <input type="hidden" name="order_id" value="<%= onerec.order_id %>" />
     <table>
@@ -31,7 +31,7 @@
           <input
             type="date"
             name="saledate"
-            value="<%= onerec.saledate %>"
+            value="<%= onerec.saledate.toISOString().split('T')[0] %>"
             required
           />
         </td>
@@ -69,82 +69,6 @@
             value="<%= onerec.authorizationnum %>"
             required
           />
-        </td>
-      </tr>
-    </table>
-    <table>
-      <tr>
-        <td>Product Name:</td>
-        <td>
-          <input
-            type="text"
-            name="productname"
-            value="<%= onerec.productname %>"
-            required
-          />
-        </td>
-      </tr>
-      <tr>
-        <td>Image:</td>
-        <td>
-          <input
-            type="text"
-            name="prodimage"
-            value="<%= onerec.prodimage %>"
-            required
-          />
-        </td>
-      </tr>
-      <tr>
-        <td>Description:</td>
-        <td>
-          <textarea name="description" rows="10" cols="30">
-  <%= onerec.description %></textarea
-          >
-        </td>
-      </tr>
-      <tr>
-        <td>Supplier ID:</td>
-        <td>
-          <input
-            type="number"
-            name="supplier_id"
-            value="<%= onerec.supplier_id %>"
-            required
-          />
-        </td>
-      </tr>
-      <tr>
-        <td>Category ID:</td>
-        <td>
-          <input
-            type="number"
-            name="category_id"
-            value="<%= onerec.category_id %>"
-            required
-          />
-        </td>
-      </tr>
-      <tr>
-        <td>Price:</td>
-        <td>
-          <input
-            type="text"
-            name="saleprice"
-            value="<%= onerec.saleprice %>"
-            required
-          />
-        </td>
-      </tr>
-      <tr>
-        <td>Status:</td>
-        <td>
-          <select name="status" required>
-            <option selected><%= onerec.status %></option>
-            <option>Available</option>
-            <option>Contingent</option>
-            <option>Coming Soon</option>
-          </select>
         </td>
       </tr>
     </table>

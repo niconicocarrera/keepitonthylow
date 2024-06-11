@@ -1,0 +1,6 @@
+saleorder edit buttons not working
+
+promotion save after edit not working
+might be due to date
+
+use https://www.w3schools.com/howto/howto_css_dropdown.asp to add dropdowns for reports on admin view

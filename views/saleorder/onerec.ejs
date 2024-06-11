@@ -1,5 +1,5 @@
 <div class="db">
-<h1>Details</h1>
+  <h1>Details</h1>
   <table>
     <tr>
       <td>Order ID:</td>
@@ -11,7 +11,7 @@
     </tr>
     <tr>
       <td>Sale Date (MM-DD-YYYY):</td>
-      <td><%= onerec.saledate %></td>
+      <td><%= onerec.saledate.toLocaleDateString('en-US') %></td>
     </tr>
     <tr>
       <td>Customer Notes:</td>

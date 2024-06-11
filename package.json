@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "bcryptjs": "^2.4.3",
     "bootstrap": "^5.3.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -16,6 +17,7 @@
     "ejs": "^3.1.9",
     "express": "^4.19.2",
     "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.0",
     "http-errors": "~1.6.3",
     "mariadb": "^3.3.0",
     "morgan": "~1.9.1",

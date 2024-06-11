@@ -1,3 +1,20 @@
+<table bgcolor="grey" width="100%">
+  <tr>
+    <td width="20%" align="left">
+      <a href="/"><img src="/images/kiotl_face_threshold_white.png" width="70" height="40"/></a>
+    </td>
+    <td width="10%" align="right">
+      <% if(session.customer_id > 0) { %>
+      <b> Hello <b> <%= session.custname %>! </b> </br>
+      <a href='/customer/logout'>Logout</a>
+      <% } else { %>
+      <a href='/customer/register'>New Customer</a> </br>
+      <a href='/customer/login'>Login</a>
+      <% } %>
+      </td>
+    <td width="10%" align="right"><a href="/shop/cart">Cart</a></td>
+  </tr>
+</table>
 <p><form action="/search" method="get">
   Search: <input type="text" name="searchcriteria"> <input type="submit" value="Go">
 </form></p>
@@ -14,7 +31,7 @@
     </li>
     <li> <a href="/archive">archive</a> </li>
     <li> <a href="/shop">shop</a> </li>
-
+    <% if(session.isadmin) { %>
         <li> <a href="/product">Product</a> </li>
         <li> <a href="/customer">Customer</a> </li>
         <li> <a href="/category">Category</a> </li>
@@ -22,5 +39,6 @@
         <li> <a href="/orderdetail">Order Detail</a> </li>
         <li> <a href="/promotion">Promotion</a> </li>
         <li> <a href="/report">Reports</a> </li>
+      <% } %>
 </ul>
 

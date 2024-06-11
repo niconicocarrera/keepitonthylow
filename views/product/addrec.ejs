@@ -28,7 +28,16 @@
       </tr>
       <tr>
         <td>Category:</td>
-        <td><input type="number" name="category_id" required /></td>
+        <td>
+          <select name="category_id" required>
+            <optgroup label="Select Category">
+              <% for (var i = 0; i < category.length; i++) { %>
+              <option value=<%= category[i].category_id %>>
+              <%= category[i].categoryname %> </option>
+              <% } %>
+              </optgroup>
+          </select>
+        </td>
       </tr>
       <tr>
         <td>Price:</td>

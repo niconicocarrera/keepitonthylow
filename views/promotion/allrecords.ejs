@@ -13,8 +13,8 @@
       <td><%= recref.promotion_id %></td>
       <td><%= recref.promotitle %></td>
       <td><%= recref.description %></td>
-      <td><%= recref.startdate %></td>
-      <td><%= recref.enddate %></td>
+      <td><%= recref.startdate.toLocaleDateString('en-US') %></td>
+      <td><%= recref.enddate.toLocaleDateString('en-US') %></td>
       <td><a href="/promotion/<%= recref.promotion_id %>/show"> Details</a></td>
       <td>
         <a href="/promotion/<%= recref.promotion_id%>/edit">Edit</a>

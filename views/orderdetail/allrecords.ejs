@@ -1,12 +1,22 @@
 <div class="db">
-<% if (allrecs.length > 0) {%>
+  <% if (allrecs.length > 0) {%>
   <table>
+    <tr>
+      <th>Order Detail ID</th>
+      <th>Order ID</th>
+      <th>Product ID</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
     <% allrecs.forEach((recref, index) => { %>
     <tr>
       <td><%= recref.orderdetail_id %></td>
       <td><%= recref.order_id %></td>
       <td><%= recref.product_id %></td>
-      <td><%= recref.saleprice %></td>
+      <td align="right">
+        <%= Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'
+        }).format(recref.saleprice) %>
+      </td>
       <td><%= recref.qty %></td>
       <td>
         <a href="/orderdetail/<%= recref.orderdetail_id %>/show"> Details</a>

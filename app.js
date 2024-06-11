@@ -4,6 +4,29 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var layouts = require('express-ejs-layouts');
+const mariadb = require('mariadb/callback');
+const dotenv = require('dotenv');
+const session = require('express-session')
+
+dotenv.config();
+const db = mariadb.createConnection({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
+  port: process.env.DB_PORT
+});
+// connect to database
+db.connect((err) => {
+  if (err) {
+    console.log("Unable to connect to database due to error: " + err);
+    res.render('error');
+  } else {
+    console.log("Connected to DB");
+  }
+});
+global.db = db;
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -29,20 +52,26 @@ var promotionRouter = require('./routes/promotion');
 var reportRouter = require('./routes/report');
 
 
-
-
 var app = express();
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(layouts);
+
+app.use(session({ secret: 'KIOTLSecret' }));
+app.use(function (req, res, next) {
+  res.locals.session = req.session;
+  next();
+});
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(layouts);
 app.use(express.static(path.join(__dirname, "node_modules/bootstrap/dist/")));
 
 
@@ -84,27 +113,6 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-const mariadb = require('mariadb/callback');
-const dotenv = require('dotenv');
-dotenv.config();
-const db = mariadb.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_DATABASE,
-  port: process.env.DB_PORT
-});
-// connect to database
-db.connect((err) => {
-  if (err) {
-    console.log("Unable to connect to database due to error: " + err);
-    res.render('error');
-  } else {
-    console.log("Connected to DB");
-  }
-});
-global.db = db;
 
 module.exports = app;
 

@@ -1,5 +1,5 @@
 <div class="db">
-<h1>Details</h1>
+  <h1>Details</h1>
   <table>
     <tr>
       <td>Order Detail ID:</td>
@@ -15,7 +15,10 @@
     </tr>
     <tr>
       <td>Sale Price:</td>
-      <td><%= onerec.saleprice %></td>
+      <td align="right">
+        <%= Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'
+        }).format(onerec.saleprice) %>
+      </td>
     </tr>
     <tr>
       <td>Quantity:</td>
