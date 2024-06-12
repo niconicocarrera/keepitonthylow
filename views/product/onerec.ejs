@@ -1,44 +1,45 @@
 <div class="db">
-  <h1>Details</h1>
   <table>
     <tr>
-      <td>Product ID:</td>
-      <td><%= onerec.product_id %></td>
-    </tr>
-    <tr>
-      <td>Product Name:</td>
       <td><%= onerec.productname %></td>
     </tr>
     <tr>
-      <td>Image:</td>
-      <td><%= onerec.prodimage %></td>
+      <td colspan="2"><img src="/images/<%= onerec.prodimage %>" alt="uhhhh"></td>
     </tr>
     <tr>
-      <td>Description:</td>
       <td><%= onerec.description %></td>
     </tr>
-    <tr>
+    <!-- <tr>
       <td>Supplier:</td>
       <td><%= onerec.supplier_id %></td>
     </tr>
     <tr>
       <td>Category:</td>
       <td><%= onerec.category_id %></td>
-    </tr>
+    </tr> -->
     <tr>
-      <td>Sale Price:</td>
       <td align="left">
         <%= Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'
         }).format(onerec.saleprice) %>
       </td>
     </tr>
     <tr>
-      <td>Status:</td>
       <td><%= onerec.status %></td>
     </tr>
-    <tr>
+    <!-- <tr>
       <td>Homepage:</td>
       <td><%= onerec.homepage %></td>
-    </tr>
+    </tr> -->
+    <td>
+      Quantity:
+      <select name="qty" required width="3">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </td>
+    <td><button type="submit">Add to Cart</button></td>
   </table>
 </div>

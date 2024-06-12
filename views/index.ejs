@@ -1,21 +1,15 @@
-<table border="1" width="100%">
+<table width="100%" height="100%">
   <tr>
-    <td width="80%">
-      <p>
-        keepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylow
-        keepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylow
-        keepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylow
-        keepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylowkeepitonthylow
-      </p>
+    <td width="80%" height="90%">
       <hr />
       <% if (allrecs.length > 0) {%> <% allrecs.forEach((recref, index) => { %>
       <product>
-        <table style="color: black">
+        <table>
           <tr>
             <td colspan="2"><%= recref.proudctname %></td>
           </tr>
           <tr>
-            <td colspan="2"><%= recref.prodimage %></td>
+            <td colspan="2"><a href="/product/<%= recref.product_id %>/show"><img src="/images/<%= recref.prodimage %>" alt="uhhhh"></a></td>
           </tr>
           <tr>
             <td colspan="2"><%= recref.description %></td>
@@ -26,16 +20,16 @@
           <tr>
             <td><%= recref.status %></td>
           </tr>
-          <tr>
+          <!-- <tr>
             <td>
               <a href="/product/<%= recref.product_id %>/show">Details</a>
             </td>
-          </tr>
+          </tr> -->
         </table>
       </product>
       <% }); %> <% } %>
     </td>
-    <td width="20%">
+    <td width="20%" >
       <% if (promos.length > 0) {%> <% promos.forEach((recref, index) => { %>
       <p><img src="/images/promo/<%= recref.promoimage %>" /></p>
       <% }); %> <% } %>

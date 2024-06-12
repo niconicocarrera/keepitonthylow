@@ -12,7 +12,7 @@ a {
 }
 
 a:hover {
-    color: #008CBA;
+    color: #ffffff;
 }
 
 h1 {
@@ -25,21 +25,22 @@ form {
 
 img {
     margin: 5px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     float: left;
 }
 
 img:hover {
-    border: 1px solid #777;
+    border: 1px solid #e6dad8b3;
+
 }
 
 ul {
     list-style-type: none;
+    align-items: center;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    border: 1px solid #e7e7e7;
-    background-color: #070029;
+    /* border: 1px solid #ffffff; */
 }
 
 li {
@@ -55,7 +56,8 @@ li a {
 }
 
 li a:hover:not(.active) {
-    background-color: #ffffff;
+    background-color: #ffffffee;
+    color: black;
 }
 
 li a.active {
@@ -64,10 +66,10 @@ li a.active {
 }
 
 .button1 {
-    background-color: #008CBA;
+    /* background-color: #008CBA; */
     font-size: 10px;
-    border-radius: 4px;
-    border: 2px solid #4CAF50;
+    /* border-radius: 4px; */
+    /* border: 2px solid #4CAF50; */
     -webkit-transition-duration: 0.4s;
     /* Safari */
     transition-duration: 0.4s;
@@ -78,15 +80,14 @@ li a.active {
 
 product {
     margin: 5px;
-    border: 2px solid #ccc;
+    /* border: 2px solid #ccc; */
     float: left;
-    background: #ffffe6;
-    box-shadow: 5px 5px 2px #888888;
+    /* box-shadow: 5px 5px 2px #888888; */
     min-width: 200px;
     max-width: 200px;
-    min-height: 250px;
-    max-height: 250px;
-    border-radius: 5px;
+    min-height: 300px;
+    max-height: 300px;
+    /* border-radius: 5px; */
     padding: 5px;
 }
 
@@ -95,6 +96,8 @@ product {
 } */
 
 promotion {
+
+    align-items: start;
     min-width: 200px;
     max-width: 200px;
     min-height: 250px;
@@ -105,7 +108,7 @@ promotion {
 tr,
 th {
     background-color: #000000;
-    border: 2px solid white;
+    /* border: 2px solid white; */
     margin: 20px;
     padding: 20px;
     color: white;
@@ -117,4 +120,17 @@ th {
 
 .db a:hover {
     color: #008CBA;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #ffcfcf;
+}
+
+
+footer a {
+    color: #000000;
 }
